@@ -1,14 +1,3 @@
-import { Button } from '@/components/ui/button';
-import { Card } from '@/components/ui/card';
-import {
-  Gift,
-  ArrowRight,
-  Mail,
-  Briefcase,
-  AlertCircle,
-  CheckCircle2,
-  EuroIcon,
-} from 'lucide-react';
 import { Header } from './components/Header';
 import { ThemeProvider } from './components/ThemeProvider';
 import { TypeAnimation } from 'react-type-animation';

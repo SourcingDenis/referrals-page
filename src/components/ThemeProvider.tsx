@@ -10,10 +10,12 @@ type ThemeProviderProps = {
 
 type ThemeProviderState = {
   theme: Theme;
+  setTheme: (theme: Theme) => void;
 };
 
 const initialState: ThemeProviderState = {
   theme: 'dark',
+  setTheme: () => null,
 };
 
 const ThemeProviderContext = createContext<ThemeProviderState>(initialState);
@@ -24,7 +26,7 @@ export function ThemeProvider({
   storageKey = 'vite-ui-theme',
   ...props
 }: ThemeProviderProps) {
-  const [theme] = useState<Theme>(defaultTheme);
+  const [theme, setTheme] = useState<Theme>(defaultTheme);
 
   useEffect(() => {
     const root = window.document.documentElement;
@@ -32,7 +34,7 @@ export function ThemeProvider({
     root.classList.add(theme);
   }, [theme]);
 
-  const value = { theme };
+  const value = { theme, setTheme };
 
   return (
     <ThemeProviderContext.Provider {...props} value={value}>
