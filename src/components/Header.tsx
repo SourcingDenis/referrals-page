@@ -46,7 +46,7 @@ export function Header() {
               onClick={handleClick}
               onMouseEnter={handleHover}
             >
-              <a href="https://jobs.ashbyhq.com/playson" target="_blank" rel="noopener noreferrer">
+              <a href="https://jobs.ashbyhq.com/playson/form/referral" target="_blank" rel="noopener noreferrer">
                 Submit a Referral
                 <SendHorizontal className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
               </a>
@@ -63,7 +63,7 @@ export function Header() {
               onClick={handleClick}
               onMouseEnter={handleHover}
             >
-              <a href="https://jobs.ashbyhq.com/playson" target="_blank" rel="noopener noreferrer">
+              <a href="https://jobs.ashbyhq.com/playson/form/referral" target="_blank" rel="noopener noreferrer">
                 <SendHorizontal className="h-4 w-4" />
               </a>
             </Button>
