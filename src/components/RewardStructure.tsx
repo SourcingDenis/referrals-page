@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
-import { Gift, Clock } from 'lucide-react';
+import { Gift, Clock, Euro } from 'lucide-react';
 import { Card } from './ui/card';
+import { Badge } from './ui/badge';
 
 const CircularProgress = ({ 
   percentage, 
@@ -49,6 +50,34 @@ const CircularProgress = ({
   );
 };
 
+const bonusStructure = [
+  {
+    level: 'Entry/Administrative or Junior Specialist',
+    amount: 200,
+    colorClass: 'bg-blue-100 text-blue-700 dark:bg-blue-950 dark:text-blue-300'
+  },
+  {
+    level: 'Middle Specialist',
+    amount: 800,
+    colorClass: 'bg-green-100 text-green-700 dark:bg-green-950 dark:text-green-300'
+  },
+  {
+    level: 'Senior Specialist',
+    amount: 1500,
+    colorClass: 'bg-purple-100 text-purple-700 dark:bg-purple-950 dark:text-purple-300'
+  },
+  {
+    level: 'Tech Lead, Manager, Director',
+    amount: 1700,
+    colorClass: 'bg-orange-100 text-orange-700 dark:bg-orange-950 dark:text-orange-300'
+  },
+  {
+    level: 'C-level',
+    amount: 2300,
+    colorClass: 'bg-red-100 text-red-700 dark:bg-red-950 dark:text-red-300'
+  }
+];
+
 export const RewardStructure = () => {
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 mb-12 md:mb-16">
@@ -63,25 +92,40 @@ export const RewardStructure = () => {
             <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
               <Gift className="w-6 h-6 text-primary" />
             </div>
-            <h2 className="text-2xl md:text-3xl font-semibold">Employee Referral Reward</h2>
+            <h2 className="text-2xl md:text-3xl font-semibold">Referral Bonus Structure</h2>
           </div>
-          <div className="relative p-6 bg-primary/5 rounded-lg overflow-hidden">
-            <div className="flex items-center justify-between gap-4">
-              <div className="w-16 h-16 rounded-full bg-blue-100 dark:bg-blue-950 flex items-center justify-center">
-                <Gift className="w-8 h-8 text-primary" />
-              </div>
-              <div className="flex-1">
-                <div className="h-1 bg-gradient-to-r from-blue-500 to-green-500 rounded-full" />
-              </div>
-              <div className="w-16 h-16 rounded-full bg-green-100 dark:bg-green-950 flex items-center justify-center">
-                <Gift className="w-8 h-8 text-green-500" />
-              </div>
-            </div>
+          <div className="overflow-x-auto">
+            <table className="w-full">
+              <thead>
+                <tr className="border-b border-border/50">
+                  <th className="text-left py-3 px-4 text-muted-foreground font-medium">Level/Role</th>
+                  <th className="text-right py-3 px-4 text-muted-foreground font-medium">Bonus Amount</th>
+                </tr>
+              </thead>
+              <tbody>
+                {bonusStructure.map((item, index) => (
+                  <tr 
+                    key={index} 
+                    className="border-b border-border/50 last:border-0 transition-colors hover:bg-muted/50"
+                  >
+                    <td className="py-3 px-4">
+                      <div className="flex items-center gap-2">
+                        <Badge variant="outline" className={`${item.colorClass} border-0`}>
+                          {item.level}
+                        </Badge>
+                      </div>
+                    </td>
+                    <td className="py-3 px-4 text-right">
+                      <div className="flex items-center justify-end gap-1 font-medium">
+                        <Euro className="w-4 h-4 text-muted-foreground" />
+                        {item.amount.toLocaleString()}
+                      </div>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </div>
-          <p className="mt-6 text-muted-foreground">
-            In order to encourage everyone to refer talented people, successful referrals will always be rewarded. 
-            Bonuses will vary depending on position and how hard it is to fill them.
-          </p>
         </Card>
       </motion.div>
 
