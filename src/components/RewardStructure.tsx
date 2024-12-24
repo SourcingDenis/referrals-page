@@ -156,7 +156,7 @@ export const RewardStructure = () => {
             </div>
             <p className="text-muted-foreground text-center">
               The referral bonus is paid in 2 parts: 50% after referred candidate is hired and 
-              the other 50% when new employee successfully passes the probation period.
+              the other 50% when the referred candidate successfully passes the probation period.
             </p>
           </div>
         </Card>

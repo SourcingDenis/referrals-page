@@ -22,7 +22,7 @@ const steps: TimelineStep[] = [
   {
     icon: <FileCheck className="w-6 h-6" />,
     title: "Submit Referral",
-    description: "Fill out the referral form with candidate details"
+    description: <>Submit your referral through our <a href="https://jobs.ashbyhq.com/playson/form/referral" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">referral form</a></>
   },
   {
     icon: <UserCheck className="w-6 h-6" />,

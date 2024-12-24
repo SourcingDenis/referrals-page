@@ -18,11 +18,11 @@ export const AdditionalInfo = () => {
           <ul className="space-y-4">
             <li className="flex gap-3">
               <ArrowRight className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
-              <span>Employees can refer as many times as they wish</span>
+              <span>You can refer as many candidates as you wish</span>
             </li>
             <li className="flex gap-3">
               <ArrowRight className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
-              <span>If the same candidate is referred by multiple employees, the first employee gets a reward</span>
+              <span>If the same candidate is referred by multiple people, the first referrer gets the reward</span>
             </li>
             <li className="flex gap-3">
               <ArrowRight className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
@@ -30,7 +30,7 @@ export const AdditionalInfo = () => {
             </li>
             <li className="flex gap-3">
               <ArrowRight className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
-              <span>The scheme of referral bonuses works for all employees except representatives of the recruiting team</span>
+              <span>The referral bonus scheme is not available for representatives of the recruiting team</span>
             </li>
           </ul>
         </Card>
@@ -50,13 +50,13 @@ export const AdditionalInfo = () => {
             <h2 className="text-2xl md:text-3xl font-semibold">How to Refer?</h2>
           </div>
           <p className="text-muted-foreground mb-6">
-            Navigate to our Careers page. Find the job opening that you want to refer your friends for 
-            and click on "Refer a Friend". Fill out the necessary details and submit them, and voila, 
-            you have successfully referred someone.
+            Submit your referral through our dedicated referral form. Simply fill out the necessary details 
+            about your referral candidate and submit them. Our recruiting team will review the application 
+            and keep you updated on the progress.
           </p>
           <Button className="w-full" asChild>
-            <a href="https://jobs.ashbyhq.com/playson" target="_blank" rel="noopener noreferrer">
-              Visit Careers Page
+            <a href="https://jobs.ashbyhq.com/playson/form/referral" target="_blank" rel="noopener noreferrer">
+              Submit a Referral
               <ArrowRight className="ml-2 h-4 w-4" />
             </a>
           </Button>

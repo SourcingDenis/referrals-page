@@ -1,6 +1,6 @@
 # Playson Referral Program
 
-A modern, interactive web application for Playson's employee referral program.
+A modern, interactive web application for Playson's external referral program.
 
 ## Features
 
