@@ -10,7 +10,7 @@ import {
 interface TimelineStep {
   icon: JSX.Element;
   title: string;
-  description: string;
+  description: string | JSX.Element;
 }
 
 const steps: TimelineStep[] = [
