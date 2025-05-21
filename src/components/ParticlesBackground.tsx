@@ -1,30 +1,34 @@
-import { useCallback } from 'react';
-import Particles from 'react-tsparticles';
-import { Engine } from 'tsparticles-engine';
-import { Container } from 'tsparticles-engine';
-import { loadFull } from 'tsparticles';
+import { useCallback, useEffect, useState } from 'react';
+import Particles, { initParticlesEngine } from '@tsparticles/react';
+import { Engine } from '@tsparticles/engine';
+import { loadSlim } from '@tsparticles/slim';
 
 export const ParticlesBackground = () => {
-  const particlesInit = useCallback(async (engine: Engine) => {
-    try {
-      await loadFull(engine as any);
-    } catch (error) {
-      console.error('Error initializing particles:', error);
-    }
+  const [init, setInit] = useState(false);
+
+  useEffect(() => {
+    initParticlesEngine(async (engine: Engine) => {
+      await loadSlim(engine);
+    }).then(() => {
+      setInit(true);
+    });
   }, []);
 
-  const particlesLoaded = useCallback(async (container: Container | undefined) => {
+  const particlesLoaded = useCallback(async (container: any) => {
     if (container) {
       console.log('Particles container loaded:', container);
     }
   }, []);
 
+  if (!init) {
+    return null;
+  }
+
   return (
     <Particles
       className="absolute inset-0 -z-10"
       id="tsparticles"
-      init={particlesInit}
-      loaded={particlesLoaded}
+      particlesLoaded={particlesLoaded}
       options={{
         background: {
           opacity: 0,
@@ -50,7 +54,8 @@ export const ParticlesBackground = () => {
           number: {
             density: {
               enable: true,
-              area: 800,
+              height: 800,
+              width: 800
             },
             value: 80,
           },
